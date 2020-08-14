@@ -46,28 +46,18 @@ class TCAPI extends EventEmitter {
  */
 
 
-  async post() {
-    if (this.shards) {
-      const body = {'guilds': this.guildcount, 'shards': this.shards};
-      fetch(`https://topcord.xyz/api/bot/stats/${this.clientid}`, {
-        method: 'post',
-        body: JSON.stringify(body),
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': this.token,
-        },
-      }).then((body) => console.log(body));
-    } else {
-      const body = {'guilds': this.guildcount, 'shards': 0};
-      fetch(`https://topcord.xyz/api/bot/stats/${this.clientid}`, {
-        method: 'post',
-        body: JSON.stringify(body),
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': this.token,
-        },
-      }).then((body) => console.log(body));
-    }
+  post() {
+    const body = {'guilds': this.guildcount, 'shards': this.shards || 0};
+    return fetch(`https://topcord.xyz/api/bot/stats/${this.clientid}`, {
+      method: 'post',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': this.token,
+      },
+    }).then((body) => {
+      console.log(body); return body;
+    });
   }
 }
 
