@@ -22,12 +22,12 @@ class TCAPI extends EventEmitter {
     if (!token) throw new Error('[TCAPI] You have not provided an API key.');
     if (!clientid) throw new Error('[TCAPI] You need to provide a client ID.');
     if (!guildcount) throw new Error('[TCAPI] You need to provide the guild count.');
-    /**
-   * This is emited if the post was successful
+  /**
+ * This is emited if the post was successful
  * @event success
  */
 
-    /**
+  /**
  * This is emited if the post had an error
  * @event error
  * @param {error} error the actual error i guess
