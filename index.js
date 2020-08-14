@@ -1,8 +1,8 @@
+/* eslint-disable require-jsdoc */
 /* eslint-disable max-len */
 const EventEmitter = require('events');
 const fetch = require('node-fetch');
 
-// eslint-disable-next-line require-jsdoc
 class TCAPI extends EventEmitter {
 /**
  *
@@ -22,12 +22,12 @@ class TCAPI extends EventEmitter {
     if (!token) throw new Error('[TCAPI] You have not provided an API key.');
     if (!clientid) throw new Error('[TCAPI] You need to provide a client ID.');
     if (!guildcount) throw new Error('[TCAPI] You need to provide the guild count.');
-  /**
- * This is emited if the post was successful
+    /**
+   * This is emited if the post was successful
  * @event success
  */
 
-  /**
+    /**
  * This is emited if the post had an error
  * @event error
  * @param {error} error the actual error i guess
@@ -40,7 +40,12 @@ class TCAPI extends EventEmitter {
     }, 1800000);
   }
 
-  // eslint-disable-next-line require-jsdoc
+  /**
+ * @param {any} body the body to send to the api
+ * @returns body
+ */
+
+
   async post() {
     if (this.shards) {
       const body = {'guilds': this.guildcount, 'shards': this.shards};
