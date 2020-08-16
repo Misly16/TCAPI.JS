@@ -1,6 +1,8 @@
 # TCAPI.JS
 An API wrapper for topcord.xyz
 
+[npm](https://img.shields.io/npm/v/tcapi.js?style=for-the-badge)
+
 Usage
 
 ```js
