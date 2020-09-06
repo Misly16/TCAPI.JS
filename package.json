@@ -1,6 +1,6 @@
 {
   "name": "tcapi.js",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "An api for receiving votes from topcord.xyz",
   "main": "index.js",
   "scripts": {
