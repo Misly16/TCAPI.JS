@@ -1,7 +1,7 @@
 {
   "name": "tcapi.js",
-  "version": "2.3.0",
-  "description": "An api for receiving votes from topcord.xyz",
+  "version": "2.3.1",
+  "description": "An api wrapper for receiving votes and sending stats to topcord.xyz",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
