@@ -3,7 +3,6 @@
 const EventEmitter = require('events');
 const fetch = require('node-fetch');
 
-
 const isalibrary = (library, client) => {
   try {
     const alib = require.cache[require.resolve(library)];
@@ -18,14 +17,23 @@ class TCAPI extends EventEmitter {
 /**
  *
  * @param {string} token The token for the client to be able to post to the API
+ * @param {any} options webhook options
  * @param {any} client the bots client
  */
-  constructor(token, client) {
+  constructor(token, options, client) {
     super();
 
     this.token = token;
     this.client = client;
+    this.options = options || {};
+    if (options) {
+      const TCAPIWebhook = require('./webhook.js');
+      this.webhook = new TCAPIWebhook(options.port, options.path);
+    }
     if (!token) throw new Error('[TCAPI] You have not provided an API key.');
+    if (!client) {
+      return;
+    }
     if (client && isCompatible(client)) {
     /**
    * This is emited if the post was successful
