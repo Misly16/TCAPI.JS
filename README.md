@@ -5,6 +5,7 @@ An API wrapper for topcord.xyz
 
 Usage
 
+Sending Stats
 ```js
 
 const TCAPI = require('tcapi.js');
@@ -19,3 +20,19 @@ tcapi.on('error', (e) => {
 });
 
 ```
+
+Receiving Votes
+```js
+const TCAPI = require('tcapi.js');
+const tcapi = new TCAPI('tcapi_token', {port: 5000});
+
+tcapi.webhook.on('listening', (info) => {
+  console.log(`Listening on port: ${info.port} and on path: ${info.path}`);
+});
+
+tcapi.webhook.on('vote', (info) => {
+  console.log(`${info.userID} voted at ${info.date}`);
+});
+
+```
+
