@@ -27,6 +27,7 @@
   "homepage": "https://github.com/Misly16/TCAPI.JS#readme",
   "dependencies": {
     "events": "^3.2.0",
+    "express": "^4.17.1",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
