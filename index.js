@@ -68,7 +68,7 @@ class TCAPI extends EventEmitter {
 
 
   post() {
-    const body = {'guilds': this.client.guilds.size || this.client.guilds.cache.size, 'shards': this.client.ws.shards.size ? this.client.shard.count : 0};
+    const body = {'guilds': this.client.guilds.size || this.client.guilds.cache.size, 'shards': this.client.shard ? this.client.shard.count : this.client.ws.shards.size};
     return fetch(`https://topcord.xyz/api/bot/stats/${this.client.user.id}`, {
       method: 'post',
       body: JSON.stringify(body),
