@@ -19,9 +19,7 @@ class TCAPIWebhook extends EventEmitter {
   listening() {
     app.use(express.json());
     app.post(this.path || '/tcapijs', (req, res) => {
-      const userid = req.body.id;
-      const date = req.body.date;
-      this.emit('vote', {userID: userid, date: date});
+      this.emit('vote', {userID: req.body.User.id, date: req.body.User.date});
     });
     app.listen(this.port, () => {
       this.emit('listening', {port: this.port, path: this.path || '/tcapijs'});
