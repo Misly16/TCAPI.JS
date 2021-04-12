@@ -3,6 +3,7 @@
   "version": "3.0.0",
   "description": "An api wrapper for receiving votes and sending stats to topcord.xyz",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "eslint": "^7.6.0",
-    "eslint-config-google": "^0.14.0"
+    "eslint-config-google": "^0.14.0",
+    "tiny-typed-emitter": "^2.0.3"
   }
 }
